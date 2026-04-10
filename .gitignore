@@ -1,0 +1,96 @@
+# Compiled Lua sources
+luac.out
+
+# luarocks build files
+*.src.rock
+*.zip
+*.tar.gz
+
+# Object files
+*.o
+*.os
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Shared objects (plugins)
+*.so
+
+# Temporary files
+*~
+
+# Auto-generated tag files
+tags
+
+# Configuration file for the `ctags` utility
+.tags
+
+# cscope
+cscope.*
+
+# Vim/Neovim swap files
+*.swp
+*.swo
+*.swn
+
+# Vim/Neovim undo files
+*.un~
+
+# Vim/Neovim sessions
+Session.vim
+
+# Viminfo file
+.viminfo
+
+# History files
+.history
+
+# Netrw
+.netrwhist
+
+# Luarocks
+.luarocks
+
+# Lua
+*.luac
+
+# OS generated files (macOS-specific)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Neovim-specific
+# (Add any plugin-specific caches here if needed, but LazyVim typically doesn't generate extra files)
