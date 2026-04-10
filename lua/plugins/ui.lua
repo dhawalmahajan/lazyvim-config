@@ -1,6 +1,6 @@
 return {{
     "folke/trouble.nvim",
-    enabled = false
+    enabled = true
 }, {
     import = "lazyvim.plugins.extras.ui.mini-starter"
 }, {
