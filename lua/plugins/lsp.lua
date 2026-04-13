@@ -1,26 +1,26 @@
-return {
-  {
+return {{
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
-    },
     opts = {
-      servers = {
-        pyright = {},
-        tsserver = {},
-      },
-      setup = {
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-      },
-    },
-  },
-}
+        servers = {
+            pyright = {},
+            tsserver = {}
+        },
+        setup = {
+            tsserver = function(_, opts)
+                opts.on_attach = function(_, bufnr)
+                    local map = function(mode, lhs, rhs, desc)
+                        vim.keymap.set(mode, lhs, rhs, {
+                            buffer = bufnr,
+                            desc = desc
+                        })
+                    end
+
+                    map("n", "<leader>co", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action")
+                    map("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
+                    map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
+                    map("n", "K", vim.lsp.buf.hover, "Hover Docs")
+                end
+            end
+        }
+    }
+}}
